@@ -54,6 +54,13 @@ var bitcoinSimNetParams = bitcoinNetParams{
 	CoinType: keychain.CoinTypeTestnet,
 }
 
+// bitcoinRegTestNetParams contains parameters specific to a local regtest network.
+var bitcoinRegTestNetParams = bitcoinNetParams{
+	Params:   &bitcoinCfg.RegressionNetParams,
+	rpcPort:  "18334",
+	CoinType: keychain.CoinTypeTestnet,
+}
+
 // litecoinTestNetParams contains parameters specific to the 4th version of the
 // test network.
 var litecoinTestNetParams = litecoinNetParams{
@@ -70,10 +77,18 @@ var litecoinMainNetParams = litecoinNetParams{
 	CoinType: keychain.CoinTypeLitecoin,
 }
 
-// regTestNetParams contains parameters specific to a local regtest network.
-var regTestNetParams = bitcoinNetParams{
-	Params:   &bitcoinCfg.RegressionNetParams,
-	rpcPort:  "18334",
+// litecoinSimNetParams contains parameters specific to the simulation test
+// network.
+var litecoinSimNetParams = litecoinNetParams{
+	Params:   &litecoinCfg.SimNetParams,
+	rpcPort:  "18556",
+	CoinType: keychain.CoinTypeTestnet,
+}
+
+// litecoinRegTestNetParams contains parameters specific to a local regtest network.
+var litecoinRegTestNetParams = litecoinNetParams{
+	Params:   &litecoinCfg.RegressionNetParams,
+	rpcPort:  "19334",
 	CoinType: keychain.CoinTypeTestnet,
 }
 
